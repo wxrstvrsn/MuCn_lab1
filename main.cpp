@@ -22,7 +22,7 @@ int main() {
 //    std::cin >> city;
 //    std::cin >> hAd;
 
-    std::string filename = "C:\\Users\\79157\\CLionProjects\\MISP\\1stLAB\\Database\\Costs.csv";
+    std::string filename = "C:\\Users\\79157\\CLionProjects\\MISP\\1stLAB\\Database\\Costs1.csv";
     std::ifstream work_file(filename);
 
     std::string line;
@@ -46,6 +46,8 @@ int main() {
 
     }
     work_file.close();
+    DatabaseHandler dt;
+    Student st;
 
 
     return 0;
