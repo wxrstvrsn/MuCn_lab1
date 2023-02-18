@@ -1,0 +1,3 @@
+/cygdrive/c/Users/79157/CLionProjects/MISP/1stLAB/lab1/cmake-build-debug/CMakeFiles/lab1.dir
+/cygdrive/c/Users/79157/CLionProjects/MISP/1stLAB/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/79157/CLionProjects/MISP/1stLAB/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
