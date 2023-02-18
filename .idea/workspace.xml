@@ -14,16 +14,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="624e45cd-e6bb-43ea-9d75-0f6102cb4b28" name="Changes" comment="added_header_and_source_files&#10;added some functional and now trying to work with file correctly">
+    <list default="true" id="624e45cd-e6bb-43ea-9d75-0f6102cb4b28" name="Changes" comment="I don't know what I did but something has changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Student.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student.h" beforeDir="false" afterPath="$PROJECT_DIR$/Student.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab1.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab1.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="firstTry" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,7 +54,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/79157/CLionProjects/MISP/temp",
+    "last_opened_file_path": "C:/Users/79157/CLionProjects/MISP/1stLAB/shitGPT",
     "structure.view.defaults.are.configured": "true"
   }
 }]]></component>
@@ -91,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676711054317</updated>
-      <workItem from="1676711056246" duration="15550000" />
+      <workItem from="1676711056246" duration="20119000" />
     </task>
     <task id="LOCAL-00001" summary="_init_Commit">
       <created>1676711486387</created>
@@ -107,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676724182515</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="I don't know what I did but something has changed">
+      <created>1676734801223</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676734801223</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +126,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="_init_Commit" />
     <MESSAGE value="added_header_and_source_files&#10;added some functional and now trying to work with file correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="added_header_and_source_files&#10;added some functional and now trying to work with file correctly" />
+    <MESSAGE value="I don't know what I did but something has changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="I don't know what I did but something has changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
