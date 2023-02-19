@@ -6,11 +6,24 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "Student.h"
 #include "Database.h"
+#include "Student.h"
+
+
+/*public class StudentService {
+private final Database database;
+
+public Student getStudentByName(String name) {
+        Row row = database.getRowByName(name);
+
+        return createStudentFromRow(row);
+    }
+}*/
 
 
 int main() {
+
+/*
 //    DatabaseHandler dat;
 //    uint age = 0;
 //    std::string name = "";
@@ -48,6 +61,24 @@ int main() {
     work_file.close();
     DatabaseHandler dt;
     Student st;
+*/
+    DatabaseHandler dt;
+    Student st;
+//    st.introduceYourself();
+
+//    std::cout << dt.getHomeFoodCost("Moscow", 30) << std::endl;
+    std::cout << dt.getOtherMontlyCosts("Moscow", 30) << std::endl;
+    std::cout << dt.getHomeFoodCost("Moscow", 30) << std::endl;
+    std::cout << dt.getCinemaCost("Moscow", "Pobeda") << std::endl;
+    std::cout << dt.getCoffeeCost("Moscow", "SuperCOffe") << std::endl;
+    std::cout << dt.getInstituteDinnerCost("Moscow", "MEI") << std::endl;
+    std::cout << dt.getTransportCost("Moscow", "Zamoskvorechje", "MIREA") << std::endl;
+
+
+
+
+
+
 
 
     return 0;

@@ -4,6 +4,8 @@
 
 #pragma once
 #include <string>
+#include "Database.h"
+
 
 
 class Student {
@@ -15,20 +17,12 @@ public:
 
     void introduceYourself();
 
-    uint getCosts(uint month, const std::string& city, const std::string& homeAddress,
-                  const std::string& institute, const std::string& cinema,
-                  const std::string& coffee, uint age);
     uint getDaysCount(uint month);
     uint getWorkdays(uint month);
-    bool isMonth(int month);
-    uint getWeekandCost(const std::string& city, const std::string& cinema,
-                        const std::string& coffee, uint age);
-
-
-    uint getAge();
-
-    void getMonth();
-
+    bool isMonth(uint month);
+    uint getWeekendCost(DatabaseHandler &data);
+    uint getWorkdayCost(DatabaseHandler &data);
+    uint getCosts(DatabaseHandler &data);
 
     ~Student();
 
@@ -39,6 +33,8 @@ private:
     std::string city;
     std::string homeAddress;
     std::string institute;
+    std::string caffe;
+    std::string cinema;
 
 
 
