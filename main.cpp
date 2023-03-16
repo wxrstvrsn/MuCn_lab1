@@ -4,82 +4,79 @@
 
 
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include "Database.h"
 #include "Student.h"
-
-
-/*public class StudentService {
-private final Database database;
-
-public Student getStudentByName(String name) {
-        Row row = database.getRowByName(name);
-
-        return createStudentFromRow(row);
-    }
-}*/
-
+#include "supportFuncs.h"
 
 int main() {
 
-/*
-//    DatabaseHandler dat;
-//    uint age = 0;
-//    std::string name = "";
-//    std::string city = "";
-//    std::string hAd = "";
-//
-//    std::cin >> age;
-//    std::cin >> name;
-//    std::cin >> city;
-//    std::cin >> hAd;
+    DatabaseHandler db;
 
-    std::string filename = "C:\\Users\\79157\\CLionProjects\\MISP\\1stLAB\\Database\\Costs1.csv";
-    std::ifstream work_file(filename);
-
-    std::string line;
-    char delimiter = ',';
-    getline(work_file, line);
-
-    while (getline(work_file, line)){
-        std::stringstream stream(line);
-
-        std::string city, age, foodCostPerMonth, otherCosts;
-        getline(stream, city, delimiter);
-        getline(stream, age, delimiter);
-        getline(stream, foodCostPerMonth, delimiter);
-        getline(stream, otherCosts, delimiter);
-
-        std::cout << "==================" << std::endl;
-        std::cout << "City: " << city << std::endl;
-        std::cout << "Age: " << age << std::endl;
-        std::cout << "foodCostPerMonth: " << foodCostPerMonth << std::endl;
-        std::cout << "otherCosts: " << otherCosts << std::endl;
-
+    std::cout << "\x1b[32;1m Do you want to set custom file paths for database initialization? (Y/N) \x1b[0m"
+              << std::endl;
+    char choose;
+    std::cin >> choose;
+    if (choose == 'Y') {
+        db = createDbWCustomPaths();
     }
-    work_file.close();
-    DatabaseHandler dt;
+
+
+    std::cout << "\n\n------Checking work on a defaulted student------\n\n" << std::endl;
     Student st;
+
+    uint ans = st.getCosts(db, 1, "Pizza", "Almaz");
+    st.introduceYourself();
+    std::cout << "Total Cost is " << ans << std::endl;
+
+    /*std::cout << "\n\n\n" << "Now you can set the parameters of custom student" << std::endl;
+
+    int age = 0;
+    std::string sAge;
+    int month = 0;
+    std::string sMonth;
+    std::string name;
+    std::string city;
+    std::string homeAddress;
+    std::string institute;
+    std::string caffe;
+    std::string cinema;
+
+    std::cout << "Name: ";
+    std::cin >> name;
+    std::cout << "Age: ";
+    std::cin >> sAge;
+    try {
+        age = std::stoi(sAge);
+    } catch (std::invalid_argument) {
+        std::cout << "Invalid Age" << std::endl;
+        return 0;
+    }
+    std::cout << "City: ";
+    std::cin >> city;
+    std::cout << "home Address: ";
+    std::cin >> homeAddress;
+    std::cout << "Institute: ";
+    std::cin >> institute;
+    std::cout << "Caffe: ";
+    std::cin >> caffe;
+    std::cout << "Cinema: ";
+    std::cin >> cinema;
+    std::cout << "Month for calculations: ";
+    std::cin >> sMonth;
+    try {
+        month = std::stoi(sMonth);
+    } catch (std::invalid_argument) {
+        std::cout << "Invalid Month" << std::endl;
+        return 0;
+    }
+
+    Student customStudent(age, month, name, city, homeAddress, institute, caffe, cinema);
+    customStudent.introduceYourself();
+
+    int ansForCustomData = customStudent.getCosts(dt);
+
+    std::cout << "\x1b[32;1m RESULT: Total cost for custom data: \x1b[0m" << ansForCustomData << std::endl;
+
 */
-    DatabaseHandler dt;
-    Student st;
-//    st.introduceYourself();
-
-//    std::cout << dt.getHomeFoodCost("Moscow", 30) << std::endl;
-    std::cout << dt.getOtherMontlyCosts("Moscow", 30) << std::endl;
-    std::cout << dt.getHomeFoodCost("Moscow", 30) << std::endl;
-    std::cout << dt.getCinemaCost("Moscow", "Pobeda") << std::endl;
-    std::cout << dt.getCoffeeCost("Moscow", "SuperCOffe") << std::endl;
-    std::cout << dt.getInstituteDinnerCost("Moscow", "MEI") << std::endl;
-    std::cout << dt.getTransportCost("Moscow", "Zamoskvorechje", "MIREA") << std::endl;
-
-
-
-
-
-
-
-
     return 0;
 }

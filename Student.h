@@ -3,39 +3,33 @@
 //
 
 #pragma once
+
 #include <string>
 #include "Database.h"
 
 
-
 class Student {
 public:
-    Student(uint age, uint month, const std::string &name, const std::string &city,
+    Student(const uint &age, const uint &month, const std::string &name, const std::string &city,
             const std::string &homeAddress, const std::string &institute);
+
     Student();
 
 
     void introduceYourself();
 
-    uint getDaysCount(uint month);
-    uint getWorkdays(uint month);
-    bool isMonth(uint month);
-    uint getWeekendCost(DatabaseHandler &data);
-    uint getWorkdayCost(DatabaseHandler &data);
-    uint getCosts(DatabaseHandler &data);
+    int getWeekendCost(const DatabaseHandler &data, const uint &month,
+                       const std::string &caffe, const std::string &cinema);
 
-    ~Student();
+    int getWorkdayCost(const DatabaseHandler &data, const uint &month);
+
+    int getCosts(const DatabaseHandler &data, const uint &month,
+                 const std::string caffe, const std::string &cinema);
 
 private:
     uint age;
-    uint month;
     std::string name;
     std::string city;
     std::string homeAddress;
     std::string institute;
-    std::string caffe;
-    std::string cinema;
-
-
-
 };
