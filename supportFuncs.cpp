@@ -3,26 +3,23 @@
 //
 
 #include "supportFuncs.h"
-#include <iostream>
 
 #define YEAR 2023
 
 
 uint getWorkdays(const uint month) {
-    uint working_days = 0;
+    uint workingDays = 0;
     uint daysInMonth = getDaysCount(month);
     for (int day = 1; day <= daysInMonth; ++day) {
         int weekday = (day + 5) % 7; // вычисление дня недели для каждого числа
         if (weekday >= 1 && weekday <= 5) { // подсчет рабочих дней: если между понедельником и пятницей
-            ++working_days; // инкрементируем счетчик
+            ++workingDays; // инкрементируем счетчик
         }
     }
-    return working_days;
-
+    return workingDays;
 }
 
 uint getDaysCount(const uint month) {
-
     switch (month) {
         case 1:
         case 3:
@@ -42,21 +39,65 @@ uint getDaysCount(const uint month) {
     }
 }
 
+bool menu() {
+    std::cout << "\x1b[32;1mContinue to calculate for other student? (Y/N)\x1b[0m" << std::endl;
+    char choose = ' ';
+    std::cin >> choose;
+    return choose == 'Y' ? true : false;
+
+}
+
 bool isMonth(uint month) {
     return month >= 1 and month <= 12;
 }
 
-DatabaseHandler createDbWCustomPaths() {
-    std::string costs, transport, inst, rest;
 
-    std::cout << "Path to the Cost:";
-    std::cin >> costs;
-    std::cout << "Path to the Transport:";
-    std::cin >> transport;
-    std::cout << "Path to the Institute:";
-    std::cin >> inst;
-    std::cout << "Path to the Caffe-and-cinema:";
-    std::cin >> rest;
-    DatabaseHandler tempDataBase(costs, transport, inst, rest);
-    return tempDataBase;
-}
+/*void calculateForCustom(const DatabaseHandler &db) {
+    int age = 0;
+    std::string sAge;
+    int month = 0;
+    std::string sMonth;
+    std::string name;
+    std::string city;
+    std::string homeAddress;
+    std::string institute;
+    std::string caffe;
+    std::string cinema;
+
+    std::cout << "Name: ";
+    std::cin >> name;
+    std::cout << "Age: ";
+    std::cin >> sAge;
+    try {
+        age = std::stoi(sAge);
+    } catch (std::invalid_argument) {
+        std::cout << "Invalid Age" << std::endl;
+        exit(1);
+    }
+    std::cout << "City: ";
+    std::cin >> city;
+    std::cout << "home Address: ";
+    std::cin >> homeAddress;
+    std::cout << "Institute: ";
+    std::cin >> institute;
+    std::cout << "Caffe: ";
+    std::cin >> caffe;
+    std::cout << "Cinema: ";
+    std::cin >> cinema;
+    while (!isMonth(month)) {
+        std::cout << "Month for calculations: " << std::endl;
+        std::cin >> sMonth;
+        try {
+            month = std::stoi(sMonth);
+
+        } catch (std::invalid_argument) {
+            std::cout << "Invalid Month" << std::endl;
+            exit(1);
+        }
+    }
+
+    Student tempStudent(age, name, city, homeAddress, institute);
+
+    std::cout << "\x1b[32;1mTotal cost is: " << tempStudent.getCosts(db, month, caffe, cinema) << "\x1b[0m"
+              << std::endl;
+}*/

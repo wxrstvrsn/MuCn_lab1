@@ -7,10 +7,11 @@
 #include <string>
 #include "Database.h"
 
+using uint = unsigned int;
 
 class Student {
 public:
-    Student(const uint &age, const uint &month, const std::string &name, const std::string &city,
+    Student(const uint &age, const std::string &name, const std::string &city,
             const std::string &homeAddress, const std::string &institute);
 
     Student();

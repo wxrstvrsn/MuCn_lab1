@@ -13,22 +13,23 @@ DatabaseHandler::DatabaseHandler() {
     institutePath = "C:\\Users\\79157\\CLionProjects\\MISP\\1stLAB\\Database\\Institute.csv";
     restPath = "C:\\Users\\79157\\CLionProjects\\MISP\\1stLAB\\Database\\Caffe-and-cinema.csv";
     std::cout << "NOTICE: The paths to the data files were set by default" << std::endl;
+    if (!initDataBase()) {
+        exit(3);
+    }
 }
 
 DatabaseHandler::DatabaseHandler(const std::string &costs, const std::string &transport,
                                  const std::string &institute, const std::string &rest) :
         costsPath(costs), transportPath(transport), institutePath(institute), restPath(rest) {
     std::cout << "NOTICE: The paths to the data files were set based on user data" << std::endl;
+    if (!initDataBase()) {
+        exit(3);
+    }
 };
 
 int DatabaseHandler::getOtherMontlyCosts(const std::string &city, const uint &age) const {
     std::fstream fs;
     fs.open(this->costsPath, std::fstream::in);
-    if (!fs.is_open()) {
-        std::cout << "\nWARNING: Error " << costsPath << " reading\n" << std::endl;
-        exit(-1);
-
-    }
 
     std::string line;
     char delimiter = ',';
@@ -53,10 +54,6 @@ int DatabaseHandler::getOtherMontlyCosts(const std::string &city, const uint &ag
 int DatabaseHandler::getHomeFoodCost(const std::string &city, const uint &age) const {
     std::fstream fs;
     fs.open(this->costsPath, std::fstream::in);
-    if (!fs.is_open()) {
-        std::cout << "\nWARNING: Error " << costsPath << " reading\n" << std::endl;
-        return 0;
-    }
 
     std::string line;
     char delimiter = ',';
@@ -81,11 +78,6 @@ int DatabaseHandler::getHomeFoodCost(const std::string &city, const uint &age) c
 int DatabaseHandler::getCinemaCost(const std::string &city, const std::string &cinema) const {
     std::fstream fs;
     fs.open(this->restPath, std::fstream::in);
-    if (!fs.is_open()) {
-        std::cout << "\nWARNING: Error " << restPath << " reading\n" << std::endl;
-        return 0;
-    }
-
 
     std::string line;
     char delimiter = ',';
@@ -112,11 +104,6 @@ int DatabaseHandler::getCinemaCost(const std::string &city, const std::string &c
 int DatabaseHandler::getCoffeeCost(const std::string &city, const std::string &coffee) const {
     std::fstream fs;
     fs.open(this->restPath, std::fstream::in);
-    if (!fs.is_open()) {
-        std::cout << "\nWARNING: Error " << restPath << " reading\n" << std::endl;
-        return 0;
-    }
-
 
     std::string line;
     char delimiter = ',';
@@ -144,11 +131,6 @@ int DatabaseHandler::getCoffeeCost(const std::string &city, const std::string &c
 int DatabaseHandler::getInstituteDinnerCost(const std::string &city, const std::string &institute) const {
     std::fstream fs;
     fs.open(this->institutePath, std::fstream::in);
-    if (!fs.is_open()) {
-        std::cout << "\nWARNING: Error " << institutePath << " reading\n" << std::endl;
-        return 0;
-    }
-
 
     std::string line;
     char delimiter = ',';
@@ -173,11 +155,6 @@ int DatabaseHandler::getTransportCost(const std::string &city, const std::string
                                       const std::string &institute) const {
     std::fstream fs;
     fs.open(this->transportPath, std::fstream::in);
-    if (!fs.is_open()) {
-        std::cout << "\nWARNING: Error " << transportPath << " reading\n" << std::endl;
-        return -2;
-    }
-
 
     std::string line;
     char delimiter = ',';
@@ -198,6 +175,24 @@ int DatabaseHandler::getTransportCost(const std::string &city, const std::string
     }
 
     return -1;
+}
+
+bool DatabaseHandler::initDataBase() const {
+    std::string paths[] = {costsPath, transportPath, institutePath, restPath};
+    std::string names[] = {"Costs", "Transport", "Institute", "Caffe-and-cinema"};
+    int ind = 0;
+    for (std::string path: paths) {
+        std::fstream fs;
+        fs.open(path, std::fstream::in);
+        if (!fs.is_open()) {
+            std::cout << "Error file \"" << names[ind] << "\" reading" << std::endl;
+            return false;
+
+        }
+        ++ind;
+    }
+    return true;
+
 }
 
 
