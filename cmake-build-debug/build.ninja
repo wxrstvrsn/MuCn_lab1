@@ -61,6 +61,24 @@ build CMakeFiles/lab1.dir/Student.cpp.o: CXX_COMPILER__lab1_Debug /cygdrive/c/Us
   OBJECT_DIR = CMakeFiles/lab1.dir
   OBJECT_FILE_DIR = CMakeFiles/lab1.dir
 
+build CMakeFiles/lab1.dir/Database.cpp.o: CXX_COMPILER__lab1_Debug /cygdrive/c/Users/79157/CLionProjects/MISP/1stLAB/lab1/Database.cpp || cmake_object_order_depends_target_lab1
+  DEP_FILE = CMakeFiles/lab1.dir/Database.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/lab1.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab1.dir
+
+build CMakeFiles/lab1.dir/supportFuncs.cpp.o: CXX_COMPILER__lab1_Debug /cygdrive/c/Users/79157/CLionProjects/MISP/1stLAB/lab1/supportFuncs.cpp || cmake_object_order_depends_target_lab1
+  DEP_FILE = CMakeFiles/lab1.dir/supportFuncs.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/lab1.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab1.dir
+
+build CMakeFiles/lab1.dir/temp.cpp.o: CXX_COMPILER__lab1_Debug /cygdrive/c/Users/79157/CLionProjects/MISP/1stLAB/lab1/temp.cpp || cmake_object_order_depends_target_lab1
+  DEP_FILE = CMakeFiles/lab1.dir/temp.cpp.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = CMakeFiles/lab1.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab1
@@ -69,7 +87,7 @@ build CMakeFiles/lab1.dir/Student.cpp.o: CXX_COMPILER__lab1_Debug /cygdrive/c/Us
 #############################################
 # Link the executable lab1.exe
 
-build lab1.exe: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/main.cpp.o CMakeFiles/lab1.dir/Student.cpp.o
+build lab1.exe: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/main.cpp.o CMakeFiles/lab1.dir/Student.cpp.o CMakeFiles/lab1.dir/Database.cpp.o CMakeFiles/lab1.dir/supportFuncs.cpp.o CMakeFiles/lab1.dir/temp.cpp.o
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
   OBJECT_DIR = CMakeFiles/lab1.dir
